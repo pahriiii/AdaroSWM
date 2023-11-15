@@ -89,7 +89,7 @@ void setup() {
     blinkLed(10);
   }
 
-  int state = radio.begin(901.0, 62.5, 9, 7, RADIOLIB_SX127X_SYNC_WORD, 17, 16, 1);
+  int state = radio.begin(901.0, 62.5, 9, 7, RADIOLIB_SX127X_SYNC_WORD, 17, 16, 0);
   if (state == RADIOLIB_ERR_NONE) {
     Serial.println(F("Initializing ... success!"));
   } else {
@@ -129,8 +129,8 @@ void loop() {
 
     // It's time to transmit data
     // Start the transmission (asynchronous)
-    transmissionState = radio.startTransmit("30");
-    Serial.println("Transmit: '30'");
+    transmissionState = radio.startTransmit("44");
+    Serial.println("Transmit: '44'");
     blinkLed(2);
     transmitFlag = true;
   }
